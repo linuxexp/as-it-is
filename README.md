@@ -27,3 +27,12 @@ MaterializeCSS
 VelocityJS
 Material Design Icons
 
+License
+========
+Released under creative commons license
+
+Screens
+========
+
+![screen shot 1](https://preview.ibb.co/cE66T5/Screen_Shot_2017_05_12_at_12_02_20_PM.png)
+![screen shot 2](https://preview.ibb.co/mwUh1Q/Screen_Shot_2017_05_12_at_12_02_08_PM.png)
