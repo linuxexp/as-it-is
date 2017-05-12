@@ -3,7 +3,6 @@
  */
 const path = require("path");
 const WebpackShellPlugin = require('webpack-shell-plugin');
-//const webpack = require("webpack");
 module.exports = {
     entry: [path.join(__dirname, 'app/libraries.js'), path.join(__dirname, 'app/app.js')],
     output: {
