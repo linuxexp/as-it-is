@@ -1,6 +1,9 @@
-angular.module("tag")
+angular.module("angular-common")
     .controller("HomeController", function() {
-        console.log("Home controller loaded");
+        console.log("nested view loaded");
+        $(document).ready(function(){
+            $('.carousel').carousel();
+        });
     });
 
 require("./home.view.html");
