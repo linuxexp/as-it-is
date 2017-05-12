@@ -13,4 +13,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
 });
 
+require("./index.html");
 require("views/home/home.controller.js");
