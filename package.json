@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --content-base dist/",
-    "build": "webpack && python -m SimpleHTTPServer"
+    "build": "webpack"
   },
   "author": "Raja Jamwal",
   "license": "ISC",
