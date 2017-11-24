@@ -17,13 +17,13 @@ Build can be accessed at http://localhost:8000/
 
 In the box
 ===========
-Webpack
-Webpack loaders for CSS, ngTemplate-loader, HTML, Font
-Babel ES6
-Webpack Development Server
-AngularJS
-Angular-ui-router
-Angular-material
+* Webpack
+* Webpack loaders for CSS, ngTemplate-loader, HTML, Font
+* Babel ES6
+* Webpack Development Server
+* AngularJS
+* Angular-ui-router
+* Angular-material
 
 License
 ========
