@@ -6,91 +6,13 @@
 </head>
 <body ng-app="angular-common">
 
-<nav class="nav-extended">
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo">DataGrids</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">link1</a></li>
-            <li><a href="#">link2</a></li>
-            <li><a href="#">link3</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-            <li><a href="#">link1</a></li>
-            <li><a href="#">link2</a></li>
-            <li><a href="#">link3</a></li>
-        </ul>
-    </div>
-    <div class="nav-content">
-        <ul class="tabs tabs-transparent">
-            <li class="tab"><a class="active" href="#test1">Intro</a></li>
-            <li class="tab"><a href="#test2">In the box</a></li>
-            <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
-            <li class="tab"><a href="#test4">About Me</a></li>
-        </ul>
-    </div>
-</nav>
-<div class="container inner-tabs">
-    <div id="test1" class="col s12">
-        <p>This is streamlined minimalistic boilerplate code to get started building beautiful apps using MaterializeCSS, Velocity</p>
-        <p>To Get Started</p>
-        <p>Install node dependacies <code>npm install</code></p>
-        <p>Install bower dependacies <code>bower install</code></p>
-        <p>Start development server <code>npm start</code><p>Development can be accessed at http://localhost:8080/</p></p>
-        <p>Build distribution package <code>npm run build</code></p>
-        <p>Build can be accessed at http://localhost:8000/</p>
-    </div>
-    <div id="test2" class="col s12">
-        <p>
-            In the box
-            <ol>
-                <li>Webpack</li>
-                <li>Webpack loaders for CSS, ngTemplate-loader, HTML, Font </li>
-                <li>Babel ES6</li>
-                <li>Webpack Development Server</li>
-                <li>AngularJS</li>
-                <li>Angular-ui-router</li>
-                <li>MaterializeCSS</li>
-                <li>VelocityJS</li>
-                <li>Material Design Icons</li>
-            </ol>
-        </p>
 
-    </div>
-    <div id="test3" class="col s12">
-        Disabled Tab
-    </div>
-    <div id="test4" class="col s12">
-        <p>Written by Raja Jamwal</p>
-        <p>Github: <a href="https://github.com/linuxexp">https://github.com/linuxexp</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rajajamwal/">https://www.linkedin.com/in/rajajamwal/</a></p>
-        <p>Blog: <a href="https://linuxexperi.wordpress.com/">https://linuxexperi.wordpress.com/</a></p>
-        <p>I take technical architectural level roles & run my small development company - DataGrid Softwares LLP</p>
-        <p>I build powerful scalable, massively concurrent, highly fault tolerant & distributed applications</p>
-        <p>
-            <ul>
-                <li><a href="http://digitallake.asia/">http://digitallake.asia/</a></li>
-                <li><a href="http://datagrids.in/">http://datagrids.in/</a></li>
-            </ul>
-        </p>
-    </div>
-</div>
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">My Messages</div>
+    </md-toolbar>
 
-
-<div ui-view></div>
-
-<div class="fixed-action-btn toolbar">
-    <a class="btn-floating btn-large red">
-        <i class="large material-icons">mode_edit</i>
-    </a>
-    <ul>
-        <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
-        <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
-        <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
-        <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-</div>
-
-<script src="/bundle.js"></script>
+    <div ui-view></div>
+    <script src="/bundle.js">
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
  * Created by raja on 07/05/17.
  */
 
-var app = angular.module('angular-common', ['ui.router']);
+var app = angular.module('angular-common', ['ui.router', 'ngMaterial']);
 app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider

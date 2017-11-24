@@ -16,8 +16,7 @@
   ],
   "dependencies": {
     "angular": "^1.6.4",
-    "materialize": "^0.98.2",
-    "velocity": "^1.5.0"
+    "angular-material": "^1.1.5"
   },
   "devDependencies": {
     "angular-ui-router": "^0.4.2"
