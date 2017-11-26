@@ -98,6 +98,5 @@ angular.module("angular-common")
     });
 
 require("./home.view.html");
-require("./home.css");
-
+require("./home.scss");
 require("app/views/home/bottom-sheet-list-template/bottom-sheet-list-template.js");

@@ -3,8 +3,11 @@
  */
 const path = require("path");
 const WebpackShellPlugin = require('webpack-shell-plugin');
-module.exports = {
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const config = {
     entry: [path.join(__dirname, 'app/libraries.js'), path.join(__dirname, 'app/app.js')],
+    devtool: "eval-source-map",
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: "/",
@@ -14,7 +17,8 @@ module.exports = {
     plugins: [
         new WebpackShellPlugin({
             onBuildExit:['cp app/index.html dist/index.html']
-        })
+        }),
+        new ExtractTextPlugin('style.css')
     ],
     module: {
         loaders: [
@@ -38,6 +42,14 @@ module.exports = {
             {
                 test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
                 loader : 'file-loader'
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                })
+
             }
         ]
     },
@@ -45,3 +57,13 @@ module.exports = {
         modules: [path.resolve(__dirname), path.resolve('./app/'), path.join(path.resolve(__dirname), "node_modules")]
     }
 };
+
+if (process.env.NODE_ENV === "production") {
+    config.devtool = "";
+    // Add more configuration for production here like
+    // Uglify plugin
+    // Offline plugin
+    // Etc,
+}
+
+module.exports = config;
