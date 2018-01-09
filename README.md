@@ -1,4 +1,6 @@
-Minimalistic boilerplate code to build using angular-material
+[![Build Status](https://travis-ci.org/linuxexp/angular-material-common.svg?branch=master)](https://travis-ci.org/linuxexp/angular-material-common)
+
+Minimalistic boilerplate code to build using angular-material with Travis CICD integrated
 
 To Get Started
 ===============
@@ -26,6 +28,7 @@ In the box
 * Angular-material
 * Material design icons
 * Lodash
+* Travis CICD
 
 License
 ========
