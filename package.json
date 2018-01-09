@@ -27,8 +27,8 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.17.0",
-    "webpack": "^2.7.0",
-    "webpack-dev-server": "^2.4.5",
+    "webpack": "=2.7.0",
+    "webpack-dev-server": "=2.4.5",
     "webpack-shell-plugin": "^0.5.0"
   }
 }
