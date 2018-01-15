@@ -1,0 +1,25 @@
+<md-content style="position: absolute; height:100%; width: 100%;">
+    <section>
+        <md-subheader>
+            <md-chips>
+                <md-chip>Chapter {{chapter.index+1}}</md-chip>
+            </md-chips>
+            <div>{{chapter.title}}</div>
+            <div>{{chapter.purport}}</div>
+        </md-subheader>
+        <md-list flex>
+            <md-list-item ng-repeat="verse in chapter.verses" class="md-3-line md-long-text" ng-click="takeToVerse(verse)">
+                <md-button ng-disabled="true">{{$index+1}}</md-button>
+                <div class="md-list-item-text">
+                    <h3>{{verse.content.en}}</h3>
+                    <p>
+                        <md-truncate flex>{{headPurport(verse.purport)}}</md-truncate>
+                    </p>
+                </div>
+                <md-button ng-disabled="true">
+                    <md-icon class="material-icons">navigate_next</md-icon>
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </section>
+</md-content>

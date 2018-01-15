@@ -1,0 +1,34 @@
+<md-content>
+    <md-list>
+        <md-list-item class="md-3-line md-long-text" ng-repeat="result in results" ng-click="goToEntity(result)">
+
+            <md-button ng-disabled="true">{{$index+1}}</md-button>
+
+            <div class="md-list-item-text">
+                <div ng-switch="result.doc.entity">
+                    <div ng-switch-when="chapter">
+                        <h3>{{result.doc.title}}</h3>
+                        <p><md-truncate flex>{{result.doc.purport}}</md-truncate></p>
+                        <md-chips>
+                            <md-chip>Chapter {{result.doc.index+1}}</md-chip>
+                        </md-chips>
+                    </div>
+                    <div ng-switch-when="verse">
+                        <h3>{{result.doc.content.en}}</h3>
+                        <p>
+                            <md-truncate flex>{{head(result.doc.purport)}}</md-truncate>
+                        </p>
+                        <md-chips>
+                            <md-chip>Chapter {{result.doc.ancestor.index+1}}</md-chip>
+                            <md-chip>Verse {{result.doc.index+1}}</md-chip>
+                        </md-chips>
+                    </div>
+                </div>
+            </div>
+
+            <md-button ng-disabled="true">
+                <md-icon class="material-icons">navigate_next</md-icon>
+            </md-button>
+        </md-list-item>
+    </md-list>
+</md-content>

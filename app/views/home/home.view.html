@@ -1,66 +1,35 @@
-<md-content style="height: 600px;" md-theme="altTheme">
-
-    <section>
-        <md-subheader class="md-primary">Unread Messages</md-subheader>
-        <md-list layout-padding>
-            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                <div class="md-list-item-text">
-                    <h3>{{message.what}}</h3>
-                    <h4>{{message.who}}</h4>
-                    <p>
-                        {{message.notes}}
-                    </p>
-                </div>
-            </md-list-item>
+<md-sidenav md-component-id="left" class="md-sidenav-left">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            As It Is
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-list>
+            <md-list-item ui-sref="home.chapters">Chapters</md-list-item>
+            <md-list-item ui-sref="home.bookmarks">Bookmarks</md-list-item>
+            <md-list-item ui-sref="home.progress">My Progress</md-list-item>
+            <md-list-item ui-sref="settings.overview">Settings</md-list-item>
+            <md-list-item ui-sref="settings.about">About</md-list-item>
+            <md-list-item ui-sref="settings.contributors">Contributors</md-list-item>
         </md-list>
-    </section>
-
-    <section>
-        <md-subheader class="md-warn">Late Messages</md-subheader>
-        <md-list layout="column" layout-padding>
-            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                <div class="md-list-item-text">
-                    <h3>{{message.what}}</h3>
-                    <h4>{{message.who}}</h4>
-                    <p>
-                        {{message.notes}}
-                    </p>
-                </div>
-            </md-list-item>
-        </md-list>
-    </section>
-
-    <section>
-        <md-subheader>Read Messages</md-subheader>
-        <md-list layout="column" layout-padding>
-            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                <div class="md-list-item-text">
-                    <h3>{{message.what}}</h3>
-                    <h4>{{message.who}}</h4>
-                    <p>
-                        {{message.notes}}
-                    </p>
-                </div>
-            </md-list-item>
-        </md-list>
-    </section>
-
-    <section>
-        <md-subheader class="md-accent">Archived messages</md-subheader>
-        <md-list layout="column" layout-padding>
-            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                <div class="md-list-item-text">
-                    <h3>{{message.what}}</h3>
-                    <h4>{{message.who}}</h4>
-                    <p>
-                        {{message.notes}}
-                    </p>
-                </div>
-            </md-list-item>
-        </md-list>
-    </section>
-
-</md-content>
-
-<md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">Show as List</md-button>
-<span class="scss-support">Support for SCSS</span>
+    </md-content>
+</md-sidenav>
+<md-toolbar class="app-toolbar" md-scroll-shrink>
+    <div class="md-toolbar-tools">
+        <md-button aria-label="Menu" ng-click="toggle()" class="md-icon-button">
+            <md-icon class="material-icons">menu</md-icon>
+        </md-button>
+        <md-button aria-label="Go back" class="md-icon-button" ng-click="goBack()">
+            <md-icon class="material-icons">arrow_back</md-icon>
+        </md-button>
+        <md-input-container class="md-block" flex-gt-sm md-no-float>
+            <input ng-model="liveText" name="liveText" placeholder="Search">
+        </md-input-container>
+        <md-button aria-label="Bookmark" class="md-icon-button" ui-sref="home.bookmarks">
+            <md-tooltip md-direction="left">All your Bookmarks</md-tooltip>
+            <md-icon class="material-icons">collections_bookmark</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<div ui-view></div>

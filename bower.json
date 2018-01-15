@@ -1,5 +1,5 @@
 {
-  "name": "tag",
+  "name": "as-it-is",
   "description": "",
   "main": "index.js",
   "authors": [
@@ -16,7 +16,8 @@
   ],
   "dependencies": {
     "angular": "^1.6.4",
-    "angular-material": "^1.1.5"
+    "angular-material": "^1.1.5",
+    "material-design-icons": "^3.0.1"
   },
   "devDependencies": {
     "angular-ui-router": "^0.4.2"

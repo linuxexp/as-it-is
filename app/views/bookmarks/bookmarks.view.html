@@ -1,0 +1,30 @@
+<md-content>
+    <section>
+        <md-subheader>
+            <md-chips>
+                <md-chip>Bookmarks</md-chip>
+            </md-chips>
+        </md-subheader>
+        <md-list>
+            <md-list-item class="md-3-line md-long-text" ng-repeat="verse in set"
+                          ui-sref="home.verse({ vid: verse.index, cid: verse.chapter.index})">
+                <md-button ng-disabled="true">{{$index+1}}</md-button>
+                <div class="md-list-item-text">
+                    <div>
+                        <h3>{{verse.content.en}}</h3>
+                        <p>
+                            <md-truncate flex>{{head(verse.purport)}}</md-truncate>
+                        </p>
+                        <md-chips>
+                            <md-chip>Chapter {{verse.chapter.index+1}}</md-chip>
+                            <md-chip>Verse {{verse.index+1}}</md-chip>
+                        </md-chips>
+                    </div>
+                </div>
+                <md-button ng-disabled="true">
+                    <md-icon class="material-icons">navigate_next</md-icon>
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </section>
+</md-content>

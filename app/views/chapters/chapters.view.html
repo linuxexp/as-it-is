@@ -1,0 +1,24 @@
+<md-content class="chapters">
+    <section>
+        <md-subheader>
+            <md-chips>
+                <md-chip>Chapters</md-chip>
+            </md-chips>
+        </md-subheader>
+        <md-list flex>
+            <!-- set opacity to half when in 'track progress' mode and marked as read -->
+            <md-list-item ng-repeat="chapter in book" class="md-3-line md-long-text" ng-click="takeToChapter(chapter)">
+                <md-button ng-disabled="true">
+                    {{$index+1}}
+                </md-button>
+                <div class="md-list-item-text">
+                    <h3>{{chapter.title}}</h3>
+                    <p>{{chapter.purport}}</p>
+                </div>
+                <md-button ng-disabled="true">
+                    <md-icon class="material-icons">navigate_next</md-icon>
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </section>
+</md-content>

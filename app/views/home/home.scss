@@ -1,3 +1,16 @@
-.scss-support {
-  background: yellow;
+.app-toolbar {
+  md-input-container {
+    .md-errors-spacer {
+      min-height: 0px !important;
+    }
+  }
+  md-input-container {
+    input::-webkit-input-placeholder {
+      color: white !important;
+    }
+  }
+  md-input-container:not(.md-input-invalid) .md-input {
+    border-color: white;
+    color: white;
+  }
 }

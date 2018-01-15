@@ -1,100 +1,27 @@
 angular.module("angular-common")
-    .controller("HomeController", function($scope, $mdBottomSheet) {
+    .controller("HomeController", function($scope, bookStore, $state, $mdSidenav) {
 
-        var imagePath = 'img/list/60.jpeg';
-        $scope.messages = [
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-            {
-                face : imagePath,
-                what: 'Brunch this weekend?',
-                who: 'Min Li Chan',
-                when: '3:08PM',
-                notes: " I'll be in your neighborhood doing errands"
-            },
-        ];
+        $scope.book  = bookStore.getBook();
+        console.log("bookStore ", bookStore);
 
+        $scope.$watch("liveText", function(text) {
+           //if (text) {
+               console.log("t ", text);
+               $state.go("home.search", {
+                  query: text
+               }, {
+                   location: 'replace'
+               });
+           //}
+        });
 
-        $scope.showListBottomSheet = function() {
-            $scope.alert = '';
-            $mdBottomSheet.show({
-                templateUrl: 'views/home/bottom-sheet-list-template/bottom-sheet-list-template.html',
-                controller: 'ListBottomSheetCtrl'
-            }).then(function(clickedItem) {
-                $scope.alert = clickedItem['name'] + ' clicked!';
-            }).catch(function(error) {
-                // User clicked outside or hit escape
-            });
+        $scope.toggle = function() {
+            $mdSidenav('left').toggle();
         };
 
+        $scope.goBack = function() {
+            window.history.back();
+        };
     });
 
 require("./home.view.html");
