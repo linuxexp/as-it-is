@@ -3,31 +3,42 @@
         <md-subheader class="md-no-sticky">Progress</md-subheader>
         <md-list-item>
             <p>Track progress</p>
-            <md-switch ng-model="data" aria-label="Switch 1" class="md-secondary"></md-switch>
+            <md-switch ng-model="settings.track_progress" aria-label="Track Progress"
+                       class="md-secondary"></md-switch>
         </md-list-item>
         <md-divider></md-divider>
         <md-subheader class="md-no-sticky">Home Screen</md-subheader>
         <md-list-item>
             <p>Chapters View</p>
-            <md-switch ng-model="data" aria-label="Switch 1" class="md-secondary"></md-switch>
+            <md-switch ng-model="settings.home.chapters" aria-label="Chapters view on home screen"
+                       class="md-secondary"></md-switch>
         </md-list-item>
         <md-list-item>
             <p>Bookmark Manager View</p>
-            <md-switch ng-model="data" aria-label="Switch 1" class="md-secondary"></md-switch>
+            <md-switch ng-model="settings.home.bookmarks" aria-label="Bookmarks view on home screen"
+                       class="md-secondary"></md-switch>
         </md-list-item>
         <md-list-item>
-            <p>Continue From Progress</p>
-            <md-switch ng-model="data" aria-label="Switch 1" class="md-secondary"></md-switch>
+            <p>Progress View</p>
+            <md-switch ng-model="settings.home.progress" aria-label="Progress view on home screen"
+                       class="md-secondary"></md-switch>
+        </md-list-item>
+        <md-list-item>
+            <p>Last Opened</p>
+            <md-switch ng-model="settings.home.lastOpened" aria-label="Last viewed on home screen"
+                       class="md-secondary"></md-switch>
         </md-list-item>
         <md-divider></md-divider>
         <md-subheader class="md-no-sticky">Translations</md-subheader>
         <md-list-item>
             <p>English</p>
-            <md-switch ng-model="data" aria-label="Switch 1" class="md-secondary"></md-switch>
+            <md-switch ng-model="settings.language.en" aria-label="English"
+                       class="md-secondary"></md-switch>
         </md-list-item>
         <md-list-item>
             <p>Sanskrit</p>
-            <md-switch ng-model="data" aria-label="Switch 1" class="md-secondary"></md-switch>
+            <md-switch ng-model="settings.language.sn" aria-label="Sanskrit"
+                       class="md-secondary"></md-switch>
         </md-list-item>
         <md-divider></md-divider>
         <md-subheader class="md-no-sticky">Reset</md-subheader>
