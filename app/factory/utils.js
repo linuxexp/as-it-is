@@ -118,6 +118,37 @@ angular.module('angular-common')
         return {
           buildFromAnnotated: buildFromAnnotated,
           getSearchResults: getSearchResults,
-          head: (arrays) => _.head(arrays)
+          head: (arrays) => _.head(arrays),
+          getProgress: (book, readList) => {
+
+              const verseTable = book.map((chapter) => {
+                 return chapter.verses.map((verse) => {
+                   verse.chapter = chapter;
+                   return verse;
+                 });
+              });
+
+              const allVerses = _.flatten(verseTable);
+
+
+              const filtered = _.transform(allVerses, (result, verse) => {
+                 if (_.includes(readList, verse.id)) {
+                     result.push(verse);
+                     return true;
+                 } else {
+                     return false;
+                 }
+              }, []);
+
+              return {
+                progress: {
+                    total: allVerses.length,
+                    read: filtered.length
+                },
+                filtered: filtered,
+                verses: allVerses
+              };
+
+          }
         };
     });

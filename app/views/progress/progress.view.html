@@ -1,1 +1,25 @@
-Progress view html
+<md-content>
+    <md-progress-linear
+            md-mode="determinate"
+            value="{{progress.progress.read/progress.progress.total}}">
+    </md-progress-linear>
+    <section>
+        <md-subheader>
+            Your progress is determined by number of verses continuously marked as 'read'
+        </md-subheader>
+    </section>
+    <section ng-repeat="(index, chapter) in groupByChapter">
+        <md-subheader>
+            Chapter {{$index+1}}
+        </md-subheader>
+        <div>
+            <md-button class="md-fab md-mini" ng-class="{'md-primary': !!readTable[verse.id], 'md-secondary': !readTable[verse.id]}"
+                       ui-sref="home.verse({ vid: verse.index, cid: verse.chapter.index})"
+                       ng-repeat="verse in chapter">
+                <md-tooltip md-direction="left" ng-if="!!readTable[verse.id]">You've completed this</md-tooltip>
+                <md-tooltip md-direction="left" ng-if="!readTable[verse.id]">You've not completed this</md-tooltip>
+                <span>{{verse.index+1}}</span>
+            </md-button>
+        </div>
+    </section>
+</md-content>

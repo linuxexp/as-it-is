@@ -44,6 +44,7 @@ angular.module('angular-common')
               }
               return false;
             },
+            getRead: () => configManager.markedAsRead || {},
             getAllBookmarks: () => configManager.markInBookmark || {},
             setSettings: (settings) => updateConfig(() => configManager.settings = settings),
             getSettings: () => configManager.settings || {},
