@@ -26,6 +26,11 @@ angular.module('angular-common')
                    configManager.markedAsRead[doc.id] = true;
                 });
             },
+            clearAllRead: () => {
+                updateConfig(() => {
+                   configManager.markedAsRead = {};
+                });
+            },
             isMarkedAsRead: function(doc) {
                 if (configManager.markedAsRead) {
                     return configManager.markedAsRead[doc.id];
@@ -37,6 +42,11 @@ angular.module('angular-common')
                    configManager.markInBookmark = configManager.markInBookmark || {};
                    configManager.markInBookmark[doc.id] = true;
                 });
+            },
+            clearAllBookmarks: () => {
+              updateConfig(() => {
+                 configManager.markInBookmark = {};
+              });
             },
             isBookmarked: function(doc) {
               if (configManager.markInBookmark) {

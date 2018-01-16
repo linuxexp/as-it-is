@@ -34,14 +34,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 cid: null
             }
         })
-        .state('home.search', {
+        /*.state('home.search', {
             url: '/search/:query',
             templateUrl: 'views/search/search.view.html',
             controller: 'SearchController',
             params: {
                 query: null
             }
-        })
+        })*/
         .state('home.progress', {
             url: '/progress',
             templateUrl: 'views/progress/progress.view.html',

@@ -23,11 +23,11 @@
             <md-switch ng-model="settings.home.progress" aria-label="Progress view on home screen"
                        class="md-secondary"></md-switch>
         </md-list-item>
-        <md-list-item>
+        <!--<md-list-item>
             <p>Last Opened</p>
             <md-switch ng-model="settings.home.lastOpened" aria-label="Last viewed on home screen"
                        class="md-secondary"></md-switch>
-        </md-list-item>
+        </md-list-item>-->
         <md-divider></md-divider>
         <md-subheader class="md-no-sticky">Translations</md-subheader>
         <md-list-item>
@@ -42,9 +42,9 @@
         </md-list-item>
         <md-divider></md-divider>
         <md-subheader class="md-no-sticky">Reset</md-subheader>
-        <md-list-item ng-click="null">Clear Settings</md-list-item>
-        <md-list-item ng-click="null">Clear Bookmarks</md-list-item>
-        <md-list-item ng-click="null">Clear All  Read</md-list-item>
+        <md-list-item ng-click="clear('settings')">Clear Settings</md-list-item>
+        <md-list-item ng-click="clear('bookmarks')">Clear Bookmarks</md-list-item>
+        <md-list-item ng-click="clear('reads')">Clear All  Read</md-list-item>
         <md-subheader class="md-no-sticky">version 1.0 build 1.0</md-subheader>
     </md-list>
 </md-content>

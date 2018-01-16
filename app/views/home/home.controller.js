@@ -1,18 +1,16 @@
 angular.module("angular-common")
-    .controller("HomeController", function($scope, bookStore, $state, $mdSidenav) {
+    .controller("HomeController", function($scope, bookStore, $state, $mdSidenav, configManager, $stateParams) {
 
         $scope.book  = bookStore.getBook();
-        console.log("bookStore ", bookStore);
 
         $scope.$watch("liveText", function(text) {
-           //if (text) {
-               console.log("t ", text);
+           if (text) {
                $state.go("home.search", {
                   query: text
                }, {
                    location: 'replace'
                });
-           //}
+           }
         });
 
         $scope.toggle = function() {
@@ -22,9 +20,26 @@ angular.module("angular-common")
         $scope.goBack = function() {
             window.history.back();
         };
+
+        const settings = configManager.getSettings();
+
+        if (settings.home && $state.current.name == 'home') {
+            if (settings.home.chapters) {
+                $state.go(".chapters");
+            }
+
+            if (settings.home.bookmarks) {
+                $state.go(".bookmarks");
+            }
+
+            if (settings.home.progress) {
+                $state.go(".progress");
+            }
+        }
+
     });
 
 require("./home.view.html");
 require("./home.scss");
-require("app/views/home/bottom-sheet-list-template/bottom-sheet-list-template.js");
 require("directives/side-nav/side-nav.js");
+require("factory/config-manager.js");

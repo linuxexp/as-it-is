@@ -1,20 +1,22 @@
 <md-content style="position: absolute; height:100%; width: 100%;">
     <section>
         <md-subheader>
-            <md-progress-linear class="progress" md-mode="determinate" value="10"></md-progress-linear>
+            <md-progress-linear ng-if="settings.track_progress" class="progress"
+                                md-mode="determinate" value="10">
+            </md-progress-linear>
             <div layout="row">
                 <div flex>
                     <md-chips>
                         <md-chip>Chapter {{chapter.index+1}}</md-chip>
                         <md-chip>Verse {{verse.index+1}}</md-chip>
                     </md-chips>
-                    <div>{{verse.content.en}}</div>
+                    <div ng-if="settings.language.en">{{verse.content.en}}</div>
                     <!-- annotate sanskrit content with synonym -->
-                    <div ng-repeat="text in verse.content.sans"
+                    <div ng-if="settings.language.sn" ng-repeat="text in verse.content.sans"
                          ng-bind-html="buildFromAnnotated(text, verse.synonyms)">
                     </div>
                 </div>
-                <div ng-if="!configManager.isMarkedAsRead(verse)" flex="5">
+                <div ng-if="!configManager.isMarkedAsRead(verse) && settings.track_progress" flex="5">
                     <md-button class="md-icon-button" ng-click="configManager.markAsRead(verse)">
                         <md-tooltip md-direction="left">Mark it as read</md-tooltip>
                         <md-icon class="material-icons">done_all</md-icon>

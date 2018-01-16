@@ -1,6 +1,8 @@
 angular.module("angular-common")
     .controller("VerseController", function ($scope, bookStore, $stateParams, utils, $sce, configManager) {
 
+        $scope.settings = configManager.getSettings();
+
         const book = bookStore.getBook();
         $scope.chapter = $stateParams.chapter || _.nth(book, $stateParams.cid-1);
         $scope.verse = $stateParams.verse || _.nth($scope.chapter.verses, $stateParams.vid-1);

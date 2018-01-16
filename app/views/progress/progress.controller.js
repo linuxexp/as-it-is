@@ -1,13 +1,16 @@
 angular.module("angular-common")
     .controller("ProgressController", function ($scope, utils, configManager, bookStore) {
 
-        $scope.progress = utils.getProgress(bookStore.getBook(),
-            _.keys(configManager.getRead()));
+        const settings = configManager.getSettings();
 
-        $scope.groupByChapter = _.groupBy($scope.progress.verses, "chapter.index");
-
-        $scope.readTable = _.groupBy($scope.progress.filtered, "id");
-
+        if (settings.track_progress) {
+            $scope.progress = utils.getProgress(bookStore.getBook(),
+                _.keys(configManager.getRead()));
+            $scope.groupByChapter = _.groupBy($scope.progress.verses, "chapter.index");
+            $scope.readTable = _.groupBy($scope.progress.filtered, "id");
+        } else {
+            $scope.progressViewDisabled = true;
+        }
     });
 
 require("./_progress.scss");

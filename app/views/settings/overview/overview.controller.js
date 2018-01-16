@@ -6,9 +6,24 @@ angular.module("angular-common")
 
         $scope.settings = configManager.getSettings() || {};
 
-        $scope.$watchCollection('settings', function(settings) {
+        $scope.$watch('settings', function(settings) {
            configManager.setSettings(settings);
-        });
+        }, true);
+
+        $scope.clear = function(entity) {
+            switch(entity) {
+                case 'settings':
+                    configManager.setSettings({});
+                break;
+                case 'bookmarks':
+                    configManager.clearAllBookmarks();
+                break;
+                case 'reads':
+                    configManager.clearAllRead();
+                 break;
+
+            }
+        }
     });
 
 
