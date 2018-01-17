@@ -62,8 +62,6 @@ In the box
 * Chai
 * Angular-mocks
 
-
-
 License
 ========
 Released under creative commons license
