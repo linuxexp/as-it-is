@@ -38,7 +38,7 @@ const karmaConfig = function(config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['mocha'],
 
 
         // web server port
@@ -55,7 +55,7 @@ const karmaConfig = function(config) {
 
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: false,
+        autoWatch: true,
 
 
         // start these browsers
@@ -76,7 +76,8 @@ const karmaConfig = function(config) {
             'karma-mocha',
             'karma-phantomjs-launcher',
             'karma-chai',
-            'karma-sourcemap-loader'
+            'karma-sourcemap-loader',
+            'karma-mocha-reporter'
         ]
     })
 };
