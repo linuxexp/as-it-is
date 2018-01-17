@@ -63,7 +63,11 @@ const config = {
         ]
     },
     resolve: {
-        modules: [path.resolve(__dirname), path.resolve('./app/'), path.join(path.resolve(__dirname), "node_modules")]
+        modules: [
+            path.resolve(__dirname),
+            path.resolve('./app/'),
+            path.join(path.resolve(__dirname), "node_modules")
+        ]
     }
 };
 

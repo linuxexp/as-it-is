@@ -3,7 +3,7 @@
 		"angularjs-annotate"
 	],
     "presets": [
-    	"stage-1",
+    	"stage-0",
     	["es2015", { "modules": false }]
     ]
 }
