@@ -5,9 +5,6 @@ const path = require("path");
 const WebpackShellPlugin = require('webpack-shell-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const appPath = path.join(__dirname, 'app');
-const nodePath = path.join(__dirname, 'node_modules');
-
 const config = {
     entry: [path.join(__dirname, 'app/libraries.js'), path.join(__dirname, 'app/app.js')],
     devtool: "eval-source-map",
@@ -38,9 +35,6 @@ const config = {
                     'css-loader'
                 ]
             },
-            /*{   test: /\.css$/,
-                loader: "css-loader?sourceMap"
-            },*/
             {
                 test: /\.html$/,
                 loader: 'ngtemplate-loader?relativeTo=' + (path.join(path.resolve(__dirname), "app")) + '/!raw-loader'
@@ -69,7 +63,6 @@ const config = {
         ]
     },
     resolve: {
-        //root: [appPath, __dirname, nodePath],
         modules: [
             path.resolve(__dirname),
             path.resolve('./app/'),
