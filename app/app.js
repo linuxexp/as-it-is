@@ -79,6 +79,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 require("./index.html");
 require("common/css/global.css");
 require("views/home/home.controller.js");
+
 require("factory/book-store.js");
 
 require("views/chapters/chapters.controller.js");
