@@ -12,4 +12,4 @@ require("bower_components/angular-aria/angular-aria.js");
 require("bower_components/angular-animate/angular-animate.js");
 require("bower_components/angular-material/angular-material.js");
 
-require("bower_components/material-design-icons/iconfont/material-icons.css");
+require("node_modules/material-design-icons/iconfont/material-icons.css");

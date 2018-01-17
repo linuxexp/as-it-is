@@ -50,11 +50,24 @@ const config = {
                     use: ['css-loader', 'sass-loader']
                 })
 
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {}
+                    }
+                ]
             }
         ]
     },
     resolve: {
-        modules: [path.resolve(__dirname), path.resolve('./app/'), path.join(path.resolve(__dirname), "node_modules")]
+        modules: [
+            path.resolve(__dirname),
+            path.resolve('./app/'),
+            path.join(path.resolve(__dirname), "node_modules")
+        ]
     }
 };
 
