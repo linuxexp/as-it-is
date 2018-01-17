@@ -16,3 +16,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
 require("./index.html");
 require("common/css/global.css");
 require("views/home/home.controller.js");
+require("factory/sample.factory.js");
