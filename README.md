@@ -1,4 +1,5 @@
 # As-It-Is
+[![Build Status](https://travis-ci.org/linuxexp/as-it-is.svg?branch=master)](https://travis-ci.org/linuxexp/as-it-is)
 
 ### Contributing
 
