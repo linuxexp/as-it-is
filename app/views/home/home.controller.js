@@ -3,15 +3,14 @@ angular.module("angular-common")
 
         $scope.book  = bookStore.getBook();
 
-        $scope.$watch("liveText", function(text) {
-           if (text) {
-               $state.go("home.search", {
-                  query: text
-               }, {
-                   location: 'replace'
-               });
-           }
-        });
+        $scope.queryKeyPressed = function(key) {
+            if (!key) return;
+            if (key.which === 13) {
+                $state.go("home.search", {
+                    query: $scope.liveText
+                });
+            }
+        };
 
         $scope.toggle = function() {
             $mdSidenav('left').toggle();
@@ -22,6 +21,12 @@ angular.module("angular-common")
         };
 
         const settings = configManager.getSettings();
+
+        $scope.$watch(function() {
+            return $state.$current.name;
+        }, function(newState, oldState) {
+            $scope.showNotice = (newState && newState === 'home') || false;
+        });
 
         if (settings.home && $state.current.name == 'home') {
             if (settings.home.chapters) {

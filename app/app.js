@@ -4,8 +4,27 @@
 
 var app = angular.module('angular-common', ['ui.router', 'ngMaterial']);
 app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
     $stateProvider
+        .state('admin', {
+            url: '/admin',
+            templateUrl: 'views/admin/admin.view.html',
+            controller: 'AdminController'
+        })
+        .state('admin.chapter', {
+            url: '/chapter',
+            templateUrl: 'views/admin/chapter/admin.chapter.view.html',
+            controller: 'AdminChapterController'
+        })
+        .state('admin.verse', {
+            url: '/chapter/:cid/verse/:vid',
+            templateUrl: 'views/admin/verse/admin.verse.view.html',
+            controller: 'AdminVerseController',
+            params: {
+                vid: null,
+                cid: null
+            }
+        })
         .state('home', {
             url: '/home',
             templateUrl: 'views/home/home.view.html',
@@ -34,14 +53,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 cid: null
             }
         })
-        /*.state('home.search', {
+        .state('home.search', {
             url: '/search/:query',
             templateUrl: 'views/search/search.view.html',
             controller: 'SearchController',
             params: {
                 query: null
             }
-        })*/
+        })
         .state('home.progress', {
             url: '/progress',
             templateUrl: 'views/progress/progress.view.html',
@@ -74,10 +93,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'ContributorsController'
         })
 
+}).run(function($state) {
+    // bootstrap code here
 });
 
 require("./index.html");
 require("common/css/global.css");
+require("views/admin/admin.controller.js");
+require("views/admin/chapter/admin.chapter.controller.js");
+require("views/admin/verse/admin.verse.controller.js");
+
 require("views/home/home.controller.js");
 
 require("factory/book-store.js");

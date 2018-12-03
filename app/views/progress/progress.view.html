@@ -2,6 +2,9 @@
     <section ng-if="progressViewDisabled">
         <md-subheader>
             You've disabled 'tracking progress' from Settings. Enable 'tracking progress' from 'Settings' to track progress.
+            <div>
+                <md-button class="md-primary md-raised" ui-sref="settings.overview">Go to Settings</md-button>
+            </div>
         </md-subheader>
     </section>
     <div ng-if="!progressViewDisabled">

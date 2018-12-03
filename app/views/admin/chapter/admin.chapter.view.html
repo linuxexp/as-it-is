@@ -1,0 +1,18 @@
+<button ng-click="addChapter()">Add Chapter</button>
+<md-list flex>
+    <!-- set opacity to half when in 'track progress' mode and marked as read -->
+    <md-list-item ng-repeat="chapter in chapters" class="md-3-line md-long-text" ng-click="expandChapter($index)">
+        <md-button ng-disabled="true">
+            {{$index+1}}
+        </md-button>
+        <div class="md-list-item-text">
+            <h3>{{chapter.title}}</h3>
+            <p>
+                <md-truncate flex>{{chapter.purport}}</md-truncate>
+            </p>
+        </div>
+        <md-button ng-disabled="true">
+            <md-icon class="material-icons">edit</md-icon>
+        </md-button>
+    </md-list-item>
+</md-list>

@@ -1,4 +1,7 @@
 <md-content>
+    <md-subheader ng-if="!results.length">
+        <div>Search results 0, try something else</div>
+    </md-subheader>
     <md-list>
         <md-list-item class="md-3-line md-long-text" ng-repeat="result in results" ng-click="goToEntity(result)">
 

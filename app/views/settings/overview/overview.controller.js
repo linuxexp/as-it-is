@@ -10,6 +10,16 @@ angular.module("angular-common")
            configManager.setSettings(settings);
         }, true);
 
+        // TODO: buggy
+        $scope.switchHomeView = function(view) {
+            console.log('switchHomeView ', view);
+            const option = $scope.settings.home[view];
+            if (!option) return;
+            const views = ['chapters', 'bookmarks', 'progress'];
+            _.forEach(views, (view) => $scope.settings.home[view] = false);
+            $scope.settings.home[view] = option;
+        };
+
         $scope.clear = function(entity) {
             switch(entity) {
                 case 'settings':

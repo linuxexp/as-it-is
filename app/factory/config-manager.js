@@ -20,10 +20,10 @@ angular.module('angular-common')
         };
 
         return {
-            markAsRead: function(doc) {
+            markAsRead: function(doc, unmark) {
                 updateConfig(() => {
                    configManager.markedAsRead = configManager.markedAsRead || {};
-                   configManager.markedAsRead[doc.id] = true;
+                   configManager.markedAsRead[doc.id] = !unmark;
                 });
             },
             clearAllRead: () => {

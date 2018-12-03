@@ -7,8 +7,8 @@
         <md-button aria-label="Go back" class="md-icon-button" ng-click="goBack()">
             <md-icon class="material-icons">arrow_back</md-icon>
         </md-button>
-        <md-input-container class="md-block" flex-gt-sm md-no-float>
-            <input ng-model="liveText" name="liveText" placeholder="Search">
+        <md-input-container class="md-block" flex md-no-float>
+            <input ng-model="liveText" ng-keypress="queryKeyPressed($event)" name="liveText" placeholder="Search">
         </md-input-container>
         <md-button aria-label="Bookmark" class="md-icon-button" ui-sref="home.bookmarks">
             <md-tooltip md-direction="left">All your Bookmarks</md-tooltip>
@@ -16,4 +16,10 @@
         </md-button>
     </div>
 </md-toolbar>
+<section ng-if="showNotice">
+    <md-subheader>
+            <div>You've not configured 'Home Screen' from Settings. Enable 'Home Screen' from 'Settings'.</div>
+            <md-button class="md-primary md-raised" ui-sref="settings.overview">Go to Settings</md-button>
+    </md-subheader>
+</section>
 <div ui-view></div>

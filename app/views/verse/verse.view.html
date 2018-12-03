@@ -16,13 +16,19 @@
                          ng-bind-html="buildFromAnnotated(text, verse.synonyms)">
                     </div>
                 </div>
-                <div ng-if="!configManager.isMarkedAsRead(verse) && settings.track_progress" flex="5">
-                    <md-button class="md-icon-button" ng-click="configManager.markAsRead(verse)">
+                <div ng-if="!configManager.isMarkedAsRead(verse) && settings.track_progress" flex="7">
+                    <md-button class="md-icon-button" ng-click="configManager.markAsRead(verse, false)">
                         <md-tooltip md-direction="left">Mark it as read</md-tooltip>
                         <md-icon class="material-icons">done_all</md-icon>
                     </md-button>
                 </div>
-                <div ng-if="!configManager.isBookmarked(verse)" flex="5">
+                <div ng-if="configManager.isMarkedAsRead(verse)" flex="7">
+                    <md-button class="md-icon-button" ng-click="configManager.markAsRead(verse, true)">
+                        <md-tooltip md-direction="left">Mark it as unread</md-tooltip>
+                        <md-icon class="material-icons">remove_circle</md-icon>
+                    </md-button>
+                </div>
+                <div ng-if="!configManager.isBookmarked(verse)" flex="7">
                     <md-button class="md-icon-button" ng-click="configManager.markInBookmark(verse)">
                         <md-tooltip md-direction="left">Bookmark verse</md-tooltip>
                         <md-icon class="material-icons">bookmark</md-icon>

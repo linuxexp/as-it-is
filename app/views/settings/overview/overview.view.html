@@ -2,7 +2,7 @@
     <md-list>
         <md-subheader class="md-no-sticky">Progress</md-subheader>
         <md-list-item>
-            <p>Track progress</p>
+            <p>Track Progress</p>
             <md-switch ng-model="settings.track_progress" aria-label="Track Progress"
                        class="md-secondary"></md-switch>
         </md-list-item>
@@ -10,17 +10,17 @@
         <md-subheader class="md-no-sticky">Home Screen</md-subheader>
         <md-list-item>
             <p>Chapters View</p>
-            <md-switch ng-model="settings.home.chapters" aria-label="Chapters view on home screen"
+            <md-switch ng-change="switchHomeView('chapters')" ng-model="settings.home.chapters" aria-label="Chapters view on home screen"
                        class="md-secondary"></md-switch>
         </md-list-item>
         <md-list-item>
             <p>Bookmark Manager View</p>
-            <md-switch ng-model="settings.home.bookmarks" aria-label="Bookmarks view on home screen"
+            <md-switch ng-change="switchHomeView('bookmarks')" ng-model="settings.home.bookmarks" aria-label="Bookmarks view on home screen"
                        class="md-secondary"></md-switch>
         </md-list-item>
         <md-list-item>
             <p>Progress View</p>
-            <md-switch ng-model="settings.home.progress" aria-label="Progress view on home screen"
+            <md-switch ng-change="switchHomeView('progress')" ng-model="settings.home.progress" aria-label="Progress view on home screen"
                        class="md-secondary"></md-switch>
         </md-list-item>
         <!--<md-list-item>
@@ -45,6 +45,7 @@
         <md-list-item ng-click="clear('settings')">Clear Settings</md-list-item>
         <md-list-item ng-click="clear('bookmarks')">Clear Bookmarks</md-list-item>
         <md-list-item ng-click="clear('reads')">Clear All  Read</md-list-item>
-        <md-subheader class="md-no-sticky">version 1.0 build 1.0</md-subheader>
+        <md-divider></md-divider>
+        <md-subheader class="md-no-sticky">version 0.1 build 1.0</md-subheader>
     </md-list>
 </md-content>

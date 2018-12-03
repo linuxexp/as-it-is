@@ -13,7 +13,9 @@
                 </md-button>
                 <div class="md-list-item-text">
                     <h3>{{chapter.title}}</h3>
-                    <p>{{chapter.purport}}</p>
+                    <p>
+                        <md-truncate flex>{{chapter.purport}}</md-truncate>
+                    </p>
                 </div>
                 <md-button ng-disabled="true">
                     <md-icon class="material-icons">navigate_next</md-icon>
