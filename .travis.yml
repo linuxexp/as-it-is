@@ -7,5 +7,6 @@ install:
  - npm install -g karma-cli
  - npm install
  - bower install
+ - node ./compiler.js
  - npm run build
  - npm test
